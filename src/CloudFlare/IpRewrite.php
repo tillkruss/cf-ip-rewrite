@@ -106,6 +106,18 @@ class IpRewrite
     }
 
     /**
+     * Gets the v4 and v6 IP ranges of Cloudflare.
+     * @return Array with IP ranges
+     */
+    public function getIpRanges()
+    {
+        return array(
+            'v4' => $this->cf_ipv4,
+            'v6' => $this->cf_ipv6,
+        );
+    }
+
+    /**
      * Handle the rewriting of CloudFlare IP Addresses to end-user IP Addresses.
      * NOTE: This function will ultimately rewrite $_SERVER["REMOTE_ADDR"] if the site is on CloudFlare
      * @return bool
